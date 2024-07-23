@@ -99,7 +99,7 @@
       bindings = <
         &mo ADJ TAB     &kp Q        &mo NAVI W    &mo NUM F     &kp P         &kp B   /**/    &kp J   &kp L          &kp U             &mo BRK Y       &kp SEMI        &kp BSPC
         &sl SYM         &mo NAVI A   &mo SYM R     &hm LCTRL S   &hm LGUI T    &kp G   /**/    &kp M   &hm RGUI N     &hm RCTRL E       &mo SYM I       &kp O           &kp SQT
-        &kp caps_word   &hm LGUI Z   &hm LCTRL X   &hm LALT C    &hm LSHFT D   &kp V   /**/    &kp K   &hm RSHFT H    &hm LALT COMMA    &hm RCTRL DOT   &hm RGUI FSLH   &kp ESC
+        &caps_word      &hm LGUI Z   &hm LCTRL X   &hm LALT C    &hm LSHFT D   &kp V   /**/    &kp K   &hm RSHFT H    &hm LALT COMMA    &hm RCTRL DOT   &hm RGUI FSLH   &caps_word
                                                       &sl NUM &mo NUM BSPC &mo BRK RET   &sk LSHFT &mo SYM SPC &mo BRK TAB
       >;
     };
