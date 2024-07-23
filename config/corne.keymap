@@ -105,9 +105,9 @@
     };
     sym_layer {
       bindings = <
-        &kp trans  &kp TILDE    &kp FSLH     &kp COLON    &kp PLUS     &kp BSLH       &kp PIPE   &kp AMPS    &kp STAR &kp QMARK    &kp MINUS &trans
-        &kp trans  &kp AT       &kp PRCNT    &kp EXCL     &kp EQUAL    &kc PIPE       &kp BSLH   &kp EQUAL   &kp DQT  &kp UNDER    &kp SEMI &trans
-        &kp trans  &trans       &caps        &kp HASH     &kp LT       &kp GT         &kp SEMI   &kp CARET   &kp DLLR &trans       &trans &trans
+        &trans  &kp TILDE    &kp FSLH     &kp COLON    &kp PLUS     &kp BSLH       &kp PIPE   &kp AMPS    &kp STAR &kp QMARK    &kp MINUS &trans
+        &trans  &kp AT       &kp PRCNT    &kp EXCL     &kp EQUAL    &kc PIPE       &kp BSLH   &kp EQUAL   &kp DQT  &kp UNDER    &kp SEMI &trans
+        &trans  &trans       &caps        &kp HASH     &kp LT       &kp GT         &kp SEMI   &kp CARET   &kp DLLR &trans       &trans &trans
                                              &trans       &trans       &trans         &mo BRK MINUS     &trans   &trans
       >;
     };
@@ -122,17 +122,17 @@
     };
     num_layer {
       bindings = <
-        &kp LSHFT  &trans       &sk LG(LCTRL) &trans       &trans      &trans                    &trans   &kp N7   &kp N8 &kp N9    &trans &trans
-        &kp LSHFT  &sk LGUI     &sk LALT     &sk LCTRL    &sk LSHFT    &sk LS(LG(LC(LALT)))      &trans   &kp N4   &kp N5 &kp N6    &trans &trans
-        &kp LSHFT  &trans       &trans       &trans       &trans       &trans                    &trans   &kp N1   &kp N2 &kp N3    &trans &trans
+        &trans  &trans       &sk LG(LCTRL) &trans       &trans      &trans                    &trans   &kp N7   &kp N8 &kp N9    &trans &trans
+        &trans  &sk LGUI     &sk LALT     &sk LCTRL    &sk LSHFT    &sk LS(LG(LC(LALT)))      &trans   &kp N4   &kp N5 &kp N6    &trans &trans
+        &trans  &trans       &trans       &trans       &trans       &trans                    &trans   &kp N1   &kp N2 &kp N3    &trans &trans
                                              &trans       &trans       &kp DOT         &trans   &kp N0   &trans
       >;
     };
     navi_layer {
       bindings = <
-        &kp trans  &trans       &trans       &trans       &trans      &trans                       &trans     &kp LS(LC(TAB))    &kp LC(TAB) &trans    &trans &trans
-        &kp trans  &trans       &sk LALT     &sk LCTRL    &sk LGUI    &sk sk LS(LG(LC(LALT)))      &kp LEFT   &kp DOWN           &kp UP      &KP RIGHT &trans &trans
-        &kp trans  &trans       &trans       &sk LALT     &trans      &trans                       &trans     &kp HOME           &kp END     &trans    &trans &trans
+        &trans  &trans       &trans       &trans       &trans      &trans                       &trans     &kp LS(LC(TAB))    &kp LC(TAB) &trans    &trans &trans
+        &trans  &trans       &sk LALT     &sk LCTRL    &sk LGUI    &sk sk LS(LG(LC(LALT)))      &kp LEFT   &kp DOWN           &kp UP      &KP RIGHT &trans &trans
+        &trans  &trans       &trans       &sk LALT     &trans      &trans                       &trans     &kp HOME           &kp END     &trans    &trans &trans
                                              &trans       &trans      &sk LSHFT      &trans     &kp RET            &trans
       >;
     };
