@@ -21,7 +21,7 @@
 };
 / {
   combos {
-
+    compatible = "zmk,combos";
       // -----------------------------------------------------------------------------------------
       // |  0  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
       // |  12 |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -72,7 +72,7 @@
       //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
       display-name="DEFAULT";
       bindings = <
-        &lt 5 TAB     &kp Q        &lt 4 W       &lt 3 F       &kp P         &kp B   /**/    &kp J   &kp L          &kp U             &lt 2 Y       &kp SEMI        &kp BSPC
+        &lt 5 TAB     &kp Q        &lt 4 W       &lt 3 F       &kp P         &kp B   /**/    &kp J   &kp L          &kp U             &lt 2 Y       &kp MINUS        &kp BSPC
         &sl 1         &lt 4 A      &lt 1 R       &hm LCTRL S   &hm LGUI T    &kp G   /**/    &kp M   &hm RGUI N     &hm RCTRL E       &lt 1 I       &kp O           &kp SQT
         &caps_word    &hm LGUI Z   &hm LCTRL X   &hm LALT C    &hm LSHFT D   &kp V   /**/    &kp K   &hm RSHFT H    &hm LALT COMMA    &hm RCTRL DOT   &hm RGUI FSLH   &caps_word
                                                       &sl 2 &lt 3 BSPC &lt 2 RET   &sk LSHFT &lt 1 SPC &lt 2 TAB
