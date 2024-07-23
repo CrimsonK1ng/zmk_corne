@@ -8,23 +8,12 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define DEFAULT 0
-#define SYM 1
-#define BRK 2
-#define NUM 3
-#define NAVI 4
-#define ADJ  5
-
 &lt {
     tapping-term-ms = <200>;
 };
 
 &sl {
     release-after-ms = <2000>;
-};
-
-&soft_off {
-    hold-time-ms = <5000>; // Only turn off it the key is held for 5 seconds or longer.
 };
 
 &caps_word {
@@ -62,15 +51,6 @@
     };
 
   };
-  macros {
-    code_block: code_block {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings
-        = <&macro_tap &kp GRAVE &kp GRAVE &kp GRAVE>
-        ;
-    };
-  };
   behaviors {
     hm: homerow_mods {
       compatible = "zmk,behavior-hold-tap";
@@ -90,23 +70,26 @@
       // | CTRL |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  '   |
       // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | ESC  |
       //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+      display-name="DEFAULT";
       bindings = <
-        &mo ADJ TAB     &kp Q        &mo NAVI W    &mo NUM F     &kp P         &kp B   /**/    &kp J   &kp L          &kp U             &mo BRK Y       &kp SEMI        &kp BSPC
-        &sl SYM         &mo NAVI A   &mo SYM R     &hm LCTRL S   &hm LGUI T    &kp G   /**/    &kp M   &hm RGUI N     &hm RCTRL E       &mo SYM I       &kp O           &kp SQT
-        &caps_word      &hm LGUI Z   &hm LCTRL X   &hm LALT C    &hm LSHFT D   &kp V   /**/    &kp K   &hm RSHFT H    &hm LALT COMMA    &hm RCTRL DOT   &hm RGUI FSLH   &caps_word
-                                                      &sl NUM &mo NUM BSPC &mo BRK RET   &sk LSHFT &mo SYM SPC &mo BRK TAB
+        &lt 5 TAB     &kp Q        &lt 4 W       &lt 3 F       &kp P         &kp B   /**/    &kp J   &kp L          &kp U             &lt 2 Y       &kp SEMI        &kp BSPC
+        &sl 1         &lt 4 A      &lt 1 R       &hm LCTRL S   &hm LGUI T    &kp G   /**/    &kp M   &hm RGUI N     &hm RCTRL E       &lt 1 I       &kp O           &kp SQT
+        &caps_word    &hm LGUI Z   &hm LCTRL X   &hm LALT C    &hm LSHFT D   &kp V   /**/    &kp K   &hm RSHFT H    &hm LALT COMMA    &hm RCTRL DOT   &hm RGUI FSLH   &caps_word
+                                                      &sl 2 &lt 3 BSPC &lt 2 RET   &sk LSHFT &lt 1 SPC &lt 2 TAB
       >;
     };
     sym_layer {
+      display-name="SYM";
       bindings = <
-        &trans  &kp TILDE    &kp FSLH     &kp COLON    &kp PLUS     &kp BSLH       &code_block   &kp AMPS    &kp STAR &kp QMARK    &kp MINUS &trans
-        &trans  &kp AT       &kp PRCNT    &kp EXCL     &kp EQUAL    &kp PIPE       &kp BSLH   &kp EQUAL   &kp DQT  &kp UNDER    &kp SEMI &trans
+        &trans  &kp TILDE    &kp FSLH     &kp COLON    &kp PLUS     &kp BSLH       &kp BSLH   &kp AMPS    &kp STAR &kp QMARK    &kp MINUS &trans
+        &trans  &kp AT       &kp PRCNT    &kp EXCL     &kp EQUAL    &kp PIPE       &kp PIPE   &kp EQUAL   &kp DQT  &kp UNDER    &kp SEMI &trans
         &trans  &trans       &kp GRAVE    &kp HASH     &kp LT       &kp GT         &kp SEMI   &kp CARET   &kp DLLR &trans       &trans &trans
-                                             &trans       &trans       &trans         &mo BRK MINUS     &trans   &trans
+                                             &trans       &trans       &trans         &lt 2 MINUS     &trans   &trans
       >;
     };
 
     brk_layer {
+      display-name="BRK";
       bindings = <
       &kp LSHFT    &kp LT         &kp GT         &kp LBRC         &kp RBRC         &trans           &trans     &trans     &trans   &trans      &trans   &trans
       &kp LSHFT    &trans         &kp LPAR       &kp RPAR         &trans           &trans           &trans     &trans     &trans   &trans      &trans   &trans
@@ -115,6 +98,7 @@
       >;
     };
     num_layer {
+      display-name="NUM";
       bindings = <
         &trans  &trans       &sk LG(LCTRL) &trans       &trans      &trans                    &trans   &kp N7   &kp N8 &kp N9    &trans &trans
         &trans  &sk LGUI     &sk LALT     &sk LCTRL    &sk LSHFT    &sk LS(LG(LC(LALT)))      &trans   &kp N4   &kp N5 &kp N6    &trans &trans
@@ -123,6 +107,7 @@
       >;
     };
     navi_layer {
+      display-name="NAVI";
       bindings = <
         &trans  &trans       &trans       &trans       &trans      &trans                       &trans     &kp LS(LC(TAB))    &kp LC(TAB) &trans    &trans &trans
         &trans  &trans       &sk LALT     &sk LCTRL    &sk LGUI    &sk LS(LG(LC(LALT)))         &kp LEFT   &kp DOWN           &kp UP      &kp RIGHT &trans &trans
@@ -131,6 +116,7 @@
       >;
     };
     adjust_layer {
+      display-name= "ADJ";
       bindings = <
           &trans      &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_CLR       &bootloader             &bootloader       &trans             &trans         &trans              &trans     &trans
           &trans      &bt BT_SEL 3     &bt BT_SEL 4     &trans           &trans           &trans                  &trans            &kp C_PREV         &kp C_PP       &kp C_NEXT          &trans     &trans
