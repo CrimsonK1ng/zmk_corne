@@ -12,10 +12,8 @@
 #define SYM 1
 #define BRK 2
 #define NUM 3
-#define NAVI    4
+#define NAVI 4
 #define ADJ  5
-
-#define HYPER LS(LG(LC(LALT)))
 
 &lt {
     tapping-term-ms = <200>;
@@ -99,10 +97,10 @@
       // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | ESC  |
       //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
       bindings = <
-        &lt ADJ TAB     &kp Q        &lt NAVI W    &lt NUM F     &kp P         &kp B   /**/    &kp J   &kp L          &kp U             &lt BRK Y       &kp SEMI        &kp BSPC
-        &sl SYM         &lt NAVI A   &lt SYM R     &hm LCTRL S   &hm LGUI T    &kp G   /**/    &kp M   &hm RGUI N     &hm RCTRL E       &lt SYM I       &kp O           &kp SQT
+        &mo ADJ TAB     &kp Q        &mo NAVI W    &mo NUM F     &kp P         &kp B   /**/    &kp J   &kp L          &kp U             &mo BRK Y       &kp SEMI        &kp BSPC
+        &sl SYM         &mo NAVI A   &mo SYM R     &hm LCTRL S   &hm LGUI T    &kp G   /**/    &kp M   &hm RGUI N     &hm RCTRL E       &mo SYM I       &kp O           &kp SQT
         &kp caps_word   &hm LGUI Z   &hm LCTRL X   &hm LALT C    &hm LSHFT D   &kp V   /**/    &kp K   &hm RSHFT H    &hm LALT COMMA    &hm RCTRL DOT   &hm RGUI FSLH   &kp ESC
-                                                      &sl NUM &lt NUM BSPC &lt BRK RET   &sk LSHFT &lt SYM SPC &lt BRK TAB
+                                                      &sl NUM &mo NUM BSPC &mo BRK RET   &sk LSHFT &mo SYM SPC &mo BRK TAB
       >;
     };
     sym_layer {
@@ -110,7 +108,7 @@
         &kp trans  &kp TILDE    &kp FSLH     &kp COLON    &kp PLUS     &kp BSLH       &kp PIPE   &kp AMPS    &kp STAR &kp QMARK    &kp MINUS &trans
         &kp trans  &kp AT       &kp PRCNT    &kp EXCL     &kp EQUAL    &kc PIPE       &kp BSLH   &kp EQUAL   &kp DQT  &kp UNDER    &kp SEMI &trans
         &kp trans  &trans       &caps        &kp HASH     &kp LT       &kp GT         &kp SEMI   &kp CARET   &kp DLLR &trans       &trans &trans
-                                             &trans       &trans       &trans         &trans     &trans   &trans
+                                             &trans       &trans       &trans         &mo BRK MINUS     &trans   &trans
       >;
     };
 
@@ -124,17 +122,17 @@
     };
     num_layer {
       bindings = <
-        &kp LSHFT  &trans       &sk LG(LCTRL) &trans       &trans      &trans         &trans   &kp N7   &kp N8 &kp N9    &trans &trans
-        &kp LSHFT  &sk LGUI     &sk LALT     &sk LCTRL    &sk LSHFT    &sk HYPER      &trans   &kp N4   &kp N5 &kp N6    &trans &trans
-        &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &kp N1   &kp N2 &kp N3    &trans &trans
+        &kp LSHFT  &trans       &sk LG(LCTRL) &trans       &trans      &trans                    &trans   &kp N7   &kp N8 &kp N9    &trans &trans
+        &kp LSHFT  &sk LGUI     &sk LALT     &sk LCTRL    &sk LSHFT    &sk LS(LG(LC(LALT)))      &trans   &kp N4   &kp N5 &kp N6    &trans &trans
+        &kp LSHFT  &trans       &trans       &trans       &trans       &trans                    &trans   &kp N1   &kp N2 &kp N3    &trans &trans
                                              &trans       &trans       &kp DOT         &trans   &kp N0   &trans
       >;
     };
     navi_layer {
       bindings = <
-        &kp trans  &trans       &trans       &trans       &trans      &trans         &trans     &kp LS(LC(TAB))    &kp LC(TAB) &trans    &trans &trans
-        &kp trans  &trans       &sk LALT     &sk LCTRL    &sk LGUI    &sk HYPER      &kp LEFT   &kp DOWN           &kp UP      &KP RIGHT &trans &trans
-        &kp trans  &trans       &trans       &sk LALT     &trans      &trans         &trans     &kp HOME           &kp END     &trans    &trans &trans
+        &kp trans  &trans       &trans       &trans       &trans      &trans                       &trans     &kp LS(LC(TAB))    &kp LC(TAB) &trans    &trans &trans
+        &kp trans  &trans       &sk LALT     &sk LCTRL    &sk LGUI    &sk sk LS(LG(LC(LALT)))      &kp LEFT   &kp DOWN           &kp UP      &KP RIGHT &trans &trans
+        &kp trans  &trans       &trans       &sk LALT     &trans      &trans                       &trans     &kp HOME           &kp END     &trans    &trans &trans
                                              &trans       &trans      &sk LSHFT      &trans     &kp RET            &trans
       >;
     };
