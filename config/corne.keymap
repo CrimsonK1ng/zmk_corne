@@ -131,7 +131,7 @@
     navi_layer {
       bindings = <
         &trans  &trans       &trans       &trans       &trans      &trans                       &trans     &kp LS(LC(TAB))    &kp LC(TAB) &trans    &trans &trans
-        &trans  &trans       &sk LALT     &sk LCTRL    &sk LGUI    &sk sk LS(LG(LC(LALT)))      &kp LEFT   &kp DOWN           &kp UP      &KP RIGHT &trans &trans
+        &trans  &trans       &sk LALT     &sk LCTRL    &sk LGUI    &sk LS(LG(LC(LALT)))         &kp LEFT   &kp DOWN           &kp UP      &KP RIGHT &trans &trans
         &trans  &trans       &trans       &sk LALT     &trans      &trans                       &trans     &kp HOME           &kp END     &trans    &trans &trans
                                              &trans       &trans      &sk LSHFT      &trans     &kp RET            &trans
       >;
